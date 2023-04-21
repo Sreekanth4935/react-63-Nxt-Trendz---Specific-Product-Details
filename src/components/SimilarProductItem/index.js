@@ -1,30 +1,27 @@
-// Write your code here
 import './index.css'
 
 const SimilarProductItem = props => {
-  const {eachProduct} = props
-  const {imageUrl, title, brand, price, rating} = eachProduct
+  const {productDetails} = props
+  const {title, brand, imageUrl, rating, price} = productDetails
 
   return (
-    <li className="li-element">
-      <div>
-        <img
-          src={imageUrl}
-          alt={`similar product ${title}`}
-          className="product-img"
-        />
-        <h1 className="title-similar">{title}</h1>
-        <p>by {brand}</p>
-        <div className="wt">
-          <p className="similar-price">Rs {price}/- </p>
-          <p className="ratings">
-            {rating}{' '}
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/star-img.png "
-              alt="star"
-              className="similar-star"
-            />
-          </p>
+    <li className="similar-product-item">
+      <img
+        src={imageUrl}
+        className="similar-product-image"
+        alt={`similar product ${title}`}
+      />
+      <p className="similar-product-title">{title}</p>
+      <p className="similar-products-brand">by {brand}</p>
+      <div className="similar-product-price-rating-container">
+        <p className="similar-product-price">Rs {price}/-</p>
+        <div className="similar-product-rating-container">
+          <p className="similar-product-rating">{rating}</p>
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/star-img.png"
+            alt="star"
+            className="similar-product-star"
+          />
         </div>
       </div>
     </li>
